@@ -6,8 +6,6 @@ DROP TABLE clientes ;
 DROP TABLE empleados ;
 DROP TABLE inventario;
 
-
-
 -- tabla empleados 
 CREATE TABLE empleados(
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,3 +37,27 @@ state BOOLEAN NOT NULL DEFAULT 1, -- pusimos el estado en 1 por defecto cada vez
 ultimo_contacto DATE 
 
 );
+
+-- INSERTAR DATOS DE EJEMPLO A LA TABLA empleados 
+-- INSERT INTO NombreDeLaTabla (columna1 , columna2 , ..) values (valor_columna1,valor_columna2,...)
+INSERT INTO empleados (nombre,puesto,salario,fecha_ingreso) 
+VALUES 
+('Ana Ramirez','Gerente General' ,7500.00 ,'2022-03-01'),
+('Oscar Lopez','Analista' ,5500.00 ,'2021-03-11'),
+('Adriano Arimana','Desarrollador' ,6500.00 ,'2023-03-01');
+
+
+-- COMANDO PARA TRAER INFORMACION DE UNA TABLA 
+-- SELECT * FROM NombreDeLaTabla ;
+
+-- TRAER TODOS LOS DATOS DE LA TABLA
+-- SELECT * FROM empleados;
+
+-- TRAER CIERTAS COLUMNAS
+-- SELECT nombre,salario FROM empleados;
+
+-- filtrar datos numericos
+-- SELECT * FROM empleados WHERE salario < 6000;
+
+-- filtrar datos comparando cadenas de texto
+SELECT * FROM empleados WHERE nombre = 'Ana Ramirez'
