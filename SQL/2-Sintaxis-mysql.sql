@@ -68,3 +68,6 @@ SELECT * FROM empleados WHERE nombre = 'Ana Ramirez'
 #COMO ACTUALIZO LOS REGISTROS CON CIERTA CONDICION
 #ACA ESTAMOS HACIENDO UN AUMENTO SOLO AL GERENTE
 UPDATE empleados SET salario = salario*1.2 WHERE puesto = 'Gerente General'
+
+# Como elimino un registro 
+DELETE FROM empleados WHERE id = 3;
