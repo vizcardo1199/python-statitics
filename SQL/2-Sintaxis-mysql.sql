@@ -61,3 +61,10 @@ VALUES
 
 -- filtrar datos comparando cadenas de texto
 SELECT * FROM empleados WHERE nombre = 'Ana Ramirez'
+
+#COMO ACTUALIZO TODOS LOS REGISTROS
+#UPDATE empleados SET salario = salario*1.1;
+
+#COMO ACTUALIZO LOS REGISTROS CON CIERTA CONDICION
+#ACA ESTAMOS HACIENDO UN AUMENTO SOLO AL GERENTE
+UPDATE empleados SET salario = salario*1.2 WHERE puesto = 'Gerente General'
