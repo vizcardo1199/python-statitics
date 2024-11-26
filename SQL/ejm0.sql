@@ -1,4 +1,4 @@
--- PLANT , AREA , SISTEMA
+-- script para crear las tablas : PLANT , AREA , SISTEMA
 
 CREATE TABLE PLANT (
 plant_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -22,7 +22,7 @@ area_id INT,
 FOREIGN KEY (area_id) REFERENCES AREA(area_id)
 );
 
-
+-- script para crear la tabla de usuarios y roles 
 
 
 INSERT INTO PLANT (plant_name) VALUES
