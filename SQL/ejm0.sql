@@ -1,3 +1,30 @@
+-- PLANT , AREA , SISTEMA
+
+CREATE TABLE PLANT (
+plant_id INT PRIMARY KEY AUTO_INCREMENT,
+plant_name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE AREA (
+area_id INT PRIMARY KEY AUTO_INCREMENT,
+area_name VARCHAR(100) NOT NULL,
+plant_id INT,
+FOREIGN KEY (plant_id) REFERENCES PLANT(plant_id)
+-- como hacemos una variable de una tabla foranea de otra
+-- FOREIGN KEY (NOMBRE DE LA VARIABLE QUE SERA REFERENCIADA) REFERENCE PLANT(LA VARIABLE PADRE)
+);
+
+
+CREATE TABLE SISTEMA (
+sistema_id INT PRIMARY KEY AUTO_INCREMENT , 
+sistema_name VARCHAR(100) NOT NULL,
+area_id INT,
+FOREIGN KEY (area_id) REFERENCES AREA(area_id)
+);
+
+
+
+
 INSERT INTO PLANT (plant_name) VALUES
 ('Planta de Producción Norte'),
 ('Planta de Ensamble Central'),
