@@ -57,3 +57,28 @@ SELECT area_id , COUNT(*) AS TotalDeSistemas FROM sistema GROUP BY area_id;
 
 # elimino un sistema especifico 
 DELETE FROM sistema WHERE sistema_id = 25
+
+
+-- INICIO DE PROCEDIMIENTO DE ELIMINAR AREA
+DELIMITER //
+
+-- PARA CREAR EL NOMBRE DEL PROCEDIMIENTO O FUNCION Y LA VARIABLE QUE ESPERA RECIBIR
+CREATE PROCEDURE EliminarArea(
+	IN areaId INT 
+) -- VAMOS HACER LA LOGICA PARA QUE LO ELIMINE
+BEGIN
+	DELETE FROM AREA
+	WHERE area_id=areaId;
+END //
+
+
+-- procedimiento para traer todas las areas
+
+DELIMITER //
+
+-- SELECT * FROM AREA;
+
+CREATE PROCEDURE TraerTodasLasAreas()
+BEGIN -- aqui dentro va la logica de consultas ya mostradas
+	SELECT * FROM area WHERE area_id=areaid;
+END
