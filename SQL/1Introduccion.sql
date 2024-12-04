@@ -39,3 +39,13 @@ DELIMITER ;
 
 -- LLAMAR AL PROCEDIMIENTO 
 CALL InsertadorDePlantas('PESQUERA DIAMANTE')
+
+#CREAR UN PROCEDIMIENTO LLAMADO :
+DELIMITER //
+CREATE PROCEDURE FiltradorDeAreasPorNombreDeLaPlanta(IN p_PlantName VARCHAR(100))
+BEGIN
+	SELECT a.AreaID , a.AreaName , a.PlantID FROM area a
+	INNER JOIN plant p ON a.PlantID = p.PlantID
+	WHERE p.PlantName = p_PlantName;
+END //
+DELIMITER ;
